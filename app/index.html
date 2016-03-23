@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Test for Hudson</title>
+
+    <!-- Bootstrap -->
+    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/app.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
+    <script src="bower_components/jquery/dist/jquery.min.js" ></scrit>
+    
+    <script lang="javascript">
+        $(document).ready(function() {
+        $('#ddCountry').val(''); 
+        });
+    </script>
+    
+    
+    <script src="bower_components/angular/angular.min.js"></script>
+    
+    <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="js/userProfile.ctrl.js"></script>
+    
+
+
+    
+    
+
+</head>
+
+<body ng-app='app_test_hudson' ng-controller='UserProfileController'>
+    <div class='container-fluid'>
+        <h1>{{pageTitle}}</h1>
+        <p>{{pageDescription}}</p>
+    </div>    
+    
+<form name="userProfileForm" >
+  <div class="form-group">
+      <div class="col-md-4 col-sm-4">
+        <label for="txtFirstName">First Name</label>
+        <input type="text" class="form-control" id="txtFirstName" name="firstName" ng-model="user.firstName" >
+        <span ng-show="isFirstNameInValid" class="help-block" style="color:red">First Name is required</span>
+      </div>
+            
+      <div class="col-md-4 col-sm-4">
+        <label for="txtLastName">Last Name</label>
+        <input type="text" class="form-control" id="txtLastName" name="lastName" ng-model="user.lastName" >
+        <span ng-show="isLastNameInValid" class="help-block" style="color:red">Last Name is required</span>
+      </div>
+
+      <div class="col-md-4 col-sm-4 hidden-xs">
+        <label for="txtAge">Age</label>
+        <input type="text" class="form-control" id="txtAge" ng-model="user.age">
+      </div>
+  </div>
+  
+    <div class="form-group">
+      <div class="col-md-8 col-sm-8">
+        <label for="txtAddress">Address</label>
+        <input type="text" class="form-control" id="txtAddress" ng-model="user.address">
+      </div>
+            
+      <div class="col-md-4 col-sm-4">
+        <label for="txtSuburb">Suburb</label>
+        <input type="text" class="form-control" id="txtSuburb" ng-model="user.suburb">
+      </div>
+  </div>
+  
+  <div class="form-group">
+      <div class="col-md-4 col-sm-4">
+        <label for="txtState">State</label>
+        <input type="text" class="form-control" id="txtState" ng-model="user.state">
+      </div>
+            
+      <div class="col-md-4 col-sm-4">
+        <label for="txtPostCode">Post Code</label>
+        <input type="text" class="form-control" id="txtPostCode" ng-model="user.postcode">
+      </div>
+
+      <div class="col-md-4 col-sm-4">
+        <label for="txtCountry">Country</label>
+            <select class="form-control" id="ddCountry" ng-model="user.country">
+                <option value="au">Australia</option>
+                <option value="nz">Newzealand</option>
+                <option value=""></option>
+            </select>
+      </div>
+  </div>
+  
+  <div class="form-group">
+      <div class="col-md-12 col-sm-12 coll-lg-12">
+          &nbsp;
+      </div>
+      
+  </div>
+  
+  <div class="form-group">
+      <div class="col-md-offset-8 col-sm-offset-8 col-md-4 col-sm-4">
+            <button type="submit" ng-click="update(user)" class="btn btn-primary btn-block">Submit</button>          
+      </div>
+  </div>
+</form>
+ <pre>user = {{user | json}}</pre>
+</body>
+
+
+
+
+</html>
