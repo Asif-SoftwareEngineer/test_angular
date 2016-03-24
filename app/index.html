@@ -44,6 +44,9 @@
         <h1>{{pageTitle}}</h1>
         <p>{{pageDescription}}</p>
     </div>    
+
+<div ng-show="isValidForm" class="alert alert-success" role="alert">User has been Saved</div>
+<div ng-show="isFirstNameInValid || isLastNameInValid" class="alert alert-danger" role="alert">Kindly check for the Erros!</div>
     
 <form name="userProfileForm" >
   <div class="form-group">
